@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+    //TODO this needs a lot more abstraction
     j := gojson.JsonMap(map[string]gojson.Json{
         "a": gojson.JsonInt(4),
         "b": gojson.JsonFloat(4.5),
