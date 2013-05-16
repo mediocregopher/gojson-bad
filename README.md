@@ -9,20 +9,19 @@ import (
 )
 
 func main() {
-    //TODO this needs a lot more abstraction
-    j := gojson.JsonMap(map[string]gojson.Json{
+    j := gojson.JsonMap{
         "a": gojson.JsonInt(4),
         "b": gojson.JsonFloat(4.5),
         "c": gojson.JsonBool(true),
         "d": gojson.JsonString("wut"),
-        "e": gojson.JsonList([]gojson.Json{
+        "e": gojson.JsonList{
             gojson.JsonString("ohai"),
-        }),
-        "f": gojson.JsonMap(map[string]gojson.Json{
+        },
+        "f": gojson.JsonMap{
             "a": gojson.JsonInt(4),
             "b": gojson.JsonFloat(4.5),
-        }),
-    })
+        },
+    }
 
     //gojson.Encode returns []byte, EncodeStr returns string
     f := gojson.EncodeStr(j)
